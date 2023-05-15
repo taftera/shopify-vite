@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# track these files, if they exist
+!.gitignore
+!.gitkeep
+!.editorconfig
+!README.md
+!CHANGELOG.md
+!composer.json
+!.scss-lint.yml
+!.shopifyignore
+!.theme-check.yml

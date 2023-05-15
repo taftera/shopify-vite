@@ -236,6 +236,9 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+    {% comment %} App CSS Configs {% endcomment %}
+    {{ 'tailwind.css' | asset_url | stylesheet_tag }}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
   </head>
 
   <body class="gradient">
@@ -249,10 +252,9 @@
 
     {% sections 'header-group' %}
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <main id="MainContent" class="content-for-layout focus-none tw-border-8 tw-border-indigo-800" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-
     {% sections 'footer-group' %}
 
     <ul hidden>

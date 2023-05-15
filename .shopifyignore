@@ -1,0 +1,7 @@
+.git/*
+.gitignore
+node_modules/
+public/
+package.json
+package-lock.json
+vite-base/
