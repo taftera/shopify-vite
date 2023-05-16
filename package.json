@@ -4,11 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "run-p -sr dev:tailwind dev:shopify dev:vite",
+    "dev": "run-p -sr dev:shopify dev:vite dev:tailwind",
     "dev:shopify": "shopify theme dev", 
-    "dev:tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --watch",
+    "dev:tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch",
     "dev:vite": "vite", 
     "build": "vite build",
+    "build:css": "npx tailwindcss -o assets/tailwind.css --minify",
+    "build:deploy": "run-p -sr build:css && run-p -sr build:push",
+    "build:push": "shopify theme push",
     "preview": "vite preview"
   },
   "devDependencies": {
