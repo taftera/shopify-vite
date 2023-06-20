@@ -20,7 +20,14 @@ module.exports = {
       x2lg: '1920px',
       pageMaxWidth: '1440px',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        heading: 'var(--font-heading-family)',
+      },
+    },
+    color: {
+      black: '#000000',
+    },
   },
   plugins: [],
 }
