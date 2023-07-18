@@ -5,23 +5,25 @@ I'm assuming you've already have a working environment w/ Node, NPM, Git, Vite, 
 If not, please install them first.
 
 ## Installation
-1. Getting theme instals going.
+1. Getting theme installs going.
 ```sh
 $ npm init -y
 $ npm create vite
 $ npm install
 $ npm install --save-dev tailwindcss postcss autoprefixer
 $ npx tailwindcss init -p
+$ npm install --save-dev vite
 $ npm install --save-dev vite-plugin-shopify
 $ npm install --save-dev npm-run-all
 ```
-2. Download the theme from Shopify
+2. Download the theme from Shopify Store
 ```
 $ shopify theme pull
+$ shopify theme check --init
 ```
-Usually I'll start downloading Dawn 9.0.0 theme from Shopify and then modify it to my needs.
+Usually I'll start downloading Dawn 10.0.0 theme from Shopify and then modify it to my needs.
 
-3. Create and Modify the vite.config.js
+3. Create and Modify the ./vite.config.js
 ```js
 import shopify from 'vite-plugin-shopify'
 
@@ -66,11 +68,17 @@ module.exports = {
 @tailwind components;
 @tailwind utilities;
 ```
-6. Create tailwind build process
+6. Update postcss.config.js with:
+```javascript
+export default {
+// instead of 
+module.exports = {
+```
+7. Create tailwind build process
 ```sh
 $ npx tailwindcss -i ./src/tailwnd.css -o ./assets/tailwind.css
 ```
-7. Update package.json > scripts
+8. Update package.json > scripts
 ```json
 {
   "scripts": {
@@ -86,15 +94,18 @@ $ npx tailwindcss -i ./src/tailwnd.css -o ./assets/tailwind.css
   }
 }
 ```
-8. Add reference to tailwind.css in layout/theme.liquid
+```ssh
+$ npm install
+```
+9. Add reference to tailwind.css in layout/theme.liquid
 ```liquid
 {{ 'tailwind.css' | asset_url | stylesheet_tag }}
 ```
-9. Add reference to AlpineJS via CDN in layout/theme.liquid
+10. Add reference to AlpineJS via CDN in layout/theme.liquid
 ```html
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
 ```
-10. Remove the vite vanilla files from base directory
+11. Remove the vite vanilla files from base directory
 
 ## Shopify Dev Start
 ```sh
@@ -105,3 +116,5 @@ $ npm run dev
 $ npm run build:deploy
 ```
 NOTE: you need to have an already theme created on the store just to be pushed
+
+### Last update 2023/07/18
