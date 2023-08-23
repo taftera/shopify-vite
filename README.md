@@ -106,6 +106,16 @@ $ npm install
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
 ```
 11. Remove the vite vanilla files from base directory
+12. Add Shopify Prettier support
+```ssh
+$ npm install --save-dev prettier @shopify/prettier-plugin-liquid
+```
+13. Create .prettierrc file
+```json
+{
+  "plugins": ["@shopify/prettier-plugin-liquid"]
+}
+```
 
 ## Shopify Dev Start
 ```sh
