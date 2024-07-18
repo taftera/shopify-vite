@@ -1,9 +1,18 @@
 .env
+.eslintrc.cjs
 .git/*
 .gitignore
+.prettierrc
 node_modules/
 public/
 package.json
 package-lock.json
 vite-base/
 src/
+index.html
+postcss.config.js
+tailwind.config.js
+vite.config.js
+
+# Somehow it keeps refreshing every second
+config/settings_schema.json

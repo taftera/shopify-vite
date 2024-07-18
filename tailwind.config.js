@@ -8,7 +8,7 @@ module.exports = {
     './snippets/*.liquid',
     './templates/*.liquid',
     './templates/*.json',
-    './templates/customers/*.liquid'
+    './templates/customers/*.liquid',
   ],
   prefix: 'tw-',
   theme: {
@@ -16,18 +16,11 @@ module.exports = {
       sm: '320px',
       md: '750px',
       lg: '990px',
-      xlg: '1440px',
-      x2lg: '1920px',
-      pageMaxWidth: '1440px',
+      xl: '1200px',
+      xxl: '1400px',
+      pageMaxWidth: '1200px',
     },
-    extend: {
-      fontFamily: {
-        heading: 'var(--font-heading-family)',
-      },
-    },
-    color: {
-      black: '#000000',
-    },
+    extend: {},
   },
   plugins: [],
-}
+};
